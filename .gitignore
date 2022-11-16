@@ -1,0 +1,6 @@
+/.ipynb_checkpoints
+/__pycache__
+/testArea
+/test_hdf5.hdf5
+/test_snapwrite.G2
+/test_unsio.G2
