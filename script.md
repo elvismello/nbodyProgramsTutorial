@@ -90,6 +90,43 @@ For writing files:
 * https://projets.lam.fr/projects/unsio/wiki/PythonWriteDataNew
 
 
+### Quick reference
+
+Tags used by UNSIO to indentify each snapshot component:
+
+| Component tag | Description |
+----------------|--------------
+gas             |  Gas particles
+halo            |  Dark matter particles
+dm              |  Dark matter particles
+disk            |  Old stars particles
+stars           |  Stars particles
+bulge           |  Bulge particles
+bndry           |  bndry particles
+
+
+Properties present in each component
+
+
+tag string  |	descripton                  |	        numpy data_array passed as parameter             |
+------------|-------------------------------|------------------------------------------------------------
+pos         |   particles positions         |   numpy 1D array of particles position (size=n*3)
+vel         |	particles velocities        |	numpy 1D array of particles velocitie (size=n*3)
+mass        |	particles masses            |	numpy 1D array of particles velocitie (size=n)
+acc         |	particles accelerations     |	numpy 1D array of particles acceleration (size=n*3)
+pot         |	particles potential         |	numpy 1D array of particles potential (size=n)
+rho         |	particles densities         |	numpy 1D array of particles density (size=n)
+hsml        |	particles hsml              |	numpy 1D array of particles hydro smooth length (size=n)
+temp        |	particles temperatures      |	numpy 1D array of particles temperature (size=n)
+age         |	particles ages              |	numpy 1D array of particles age (size=n)
+metal       |	particles metallicity       |	numpy 1D array of particles metallicity (size=n)
+u           |	particles internal energy   |	numpy 1D array of particles internal energy (size=n)
+aux         |	particles auxilliary (NEMO) |	numpy 1D auxiliary array (size=n)
+keys        |	particles keys (NEMO)       |	numpy 1D keys array (size=n)
+id          |	particles indexes (NEMO)    |	numpy 1D keys array (size=n)
+
+
+
 
 
 ## Pynbody
@@ -124,6 +161,44 @@ Most of the time, it is as dificult to use as pynbody or unsio.
 pip install h5py
 ~~~
 
+### Quick Reference
+
+For Gadget HDF5 snapshots, the structure is almost the same for all versions. Using HDF5 everything is loaded as dictionaries, which make things quite a bit easier.
+
+Usual structure and tags are, for the main datasets:
+
+| Component tag | Description |
+----------------|--------------
+PartType0       |  Gas particles
+PartType1       |  Dark matter/Halo particles
+PartType2       |  Disk particles
+PartType3       |  Bulge particles
+PartType4       |  Stars particles
+PartType5       |  Boundary particles
+
+
+where all particles have the properties:
+
+
+| Property tag | Description |
+----------------|--------------
+Masses          |   Masses
+ParticleIDs     |   IDs
+Coordinates     |   Cordinates as 3-dimensional vectors
+Velocities      |   Velocities as 3-dimensional vectors
+
+
+and gas particles (PartType0) also have the properties:
+
+
+| Property tag      | Description                                               |
+--------------------|------------------------------------------------------------
+SmoothingLength     |   Smoothing length of the particle
+Density             |   Density
+StarFormationRate   |   Star formation rate, if star formation was activated
+ElectronAbundance   |   Electron abundance, if cooling was activated
+Metallicity         |   Gas metallicity, if supernovae feedback was activated
+InternalEnergy      |   Gas internal energy
 
 
 
