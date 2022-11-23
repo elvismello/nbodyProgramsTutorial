@@ -207,9 +207,9 @@ InternalEnergy      |   Gas internal energy
 * Sometimes Gadget-4 snapshots written in the binary format will have strange fields that not every program will be able to read.
 
 * Even though Gadget-4 understands the binary format from Gadget-2, it will not accept it as initial conditions, unless a block of metallicity is inserted into the format for gas particles (I think). Python 3 versions of galstep and clustep will usually work.
-    * UNSIO has a way to use this block, reading and writing to it, but didn't always work the last time I checked.
+    * UNSIO has a way to use this block, reading and writing to it, but it didn't always work the last time I checked.
 
-* HDF5 snapshots from Gadget-2/3 and Gadget-4 are not exactly made in the same way. There are different HDF5 groups for the header and other parameters, *BUT* essential information, such as particle positions and velocities, are stored in the same way.
+* HDF5 snapshots from Gadget-2/3 and Gadget-4 are not exactly made in the same way. There are different HDF5 groups for the header and other parameters, *BUT* essential information, such as particles' positions and velocities, are stored in the same way.
 
 
 
