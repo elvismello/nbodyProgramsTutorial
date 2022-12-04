@@ -202,6 +202,43 @@ InternalEnergy      |   Gas internal energy
 
 
 
+# Simulation programs
+
+## Gadget 2
+
+The current most used (for our group) n-body simulations program. It's quite robust and has a lot of features, being useful for numerous needs.
+
+
+
+## Gadget 4
+
+A newer Gadget version. It has various improvements over Gadget 2 and 3, including some optimizations, better accuracy and scallability.
+
+It nativelly includes simpler, but ok, methods of star formation and cooling.
+
+Has a cap of 2 GB per file in the Gadget 2 format. The manual advises to use HDF5, since the binary file is old and a bit outdated.
+
+
+## Others
+
+### Gadget 3
+
+An updated version of Gadget 2 with numerous improvements. Should function in a similar way to Gadget 4, but, as Volker Springel put it, this code is confuse by times and not very expandable. In Gadget 4 the code should be clearer and easier to modify.
+
+
+### Ramses
+
+"Grid base hydrodynamical solver with adaptive mesh refinement". Has advantages when dealing with hydrodynamics, but is more complex to use.
+
+Similarly to Arepo, this code discretizes the space, basically leaving a given maximum of mass for an element of space, differing from Gadget, where the mass is discretized in the form of particles.
+
+
+### Arepo
+
+It uses a moving mesh, optimizing space to subdivide the mass. It was developed to be an efficient code structure with state of the art numerical techniques, coded in a way that any conmputational astrophysicist could develop their own specialized modules.
+
+
+
 # Warnings
 
 * Sometimes Gadget-4 snapshots written in the binary format will have strange fields that not every program will be able to read.
@@ -265,6 +302,79 @@ Now, depending on server settings and key settings, there shouldn't be the need 
 
 
 
+## man
+
+Shows a manual for a specific command. Can be used as
+
+~~~
+man <command_to_be_explained>
+~~~
+
+
+
+## scp
+
+Basically `cp`, but can be used to transfer files over a network. Can be used as
+
+~~~
+scp <origin> <destination>
+
+scp <user>@<server>:<origin> <destination>
+
+scp <origin> <user>@<server>:<destination>
+
+scp <user>@<server>:<origin> <user>@<other_server>:<destination>
+~~~
+
+If the user is the same at the server and the computer issuing commands, `<user>@` can be ommited.
+
+
+
+## rsync
+
+This command can recursively sincronize a set of files, usually being faster than scp to copy a large quantity of them.
+
+
+
+## qsub, qstat, qdel
+
+Basic commands for using the queue in hercules.
+
+* `qsub` is used for subimitting the job. A `submit.job` file is usually given as parameter with specific properties and the command to be executed;
+
+* `qstat` returns the current running jobs. The first column by default is the job id followed by the machine running the job.
+
+* `qdel` can "delete" a job, sending a stop signal to the process. It is used as
+
+~~~
+        qdel <job id>
+~~~
+
+
+
+## less
+
+Useful command for poking around text based files. Can be used as
+
+~~~
+less <path_to_file>
+~~~
+
+Navigation is simply done with the page up/down, mouse wheel (on certain terminal emulators) and the arrow keys.
+
+
+
+## top and htop
+
+Shows all tasks running in the system at the moment, per thred utilization and other useful information. Simply used by issuing
+
+~~~
+top
+
+htop
+~~~
+
+`htop` is a incremented version of `top` and is easier to used overall.
 
 
 # Author
