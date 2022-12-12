@@ -332,7 +332,20 @@ If the user is the same at the server and the computer issuing commands, `<user>
 
 ## rsync
 
-This command can recursively sincronize a set of files, usually being faster than scp to copy a large quantity of them.
+This command can recursively sincronize a set of files, usually being faster than `scp` to copy a large quantity of them.
+
+It can be used in a similar manner to `scp`
+
+~~~
+
+rsync -avP <origin> <destination>
+
+~~~
+
+where the options `-avP` would use the archive mode (`-a`) with a verbose output (`-v`) and a progress bar (`-P`).
+
+
+
 
 
 
@@ -366,7 +379,7 @@ Navigation is simply done with the page up/down, mouse wheel (on certain termina
 
 ## top and htop
 
-Shows all tasks running in the system at the moment, per thred utilization and other useful information. Simply used by issuing
+Shows all tasks running in the system at the moment, per thread utilization and other useful information. Simply used by issuing
 
 ~~~
 top
@@ -374,7 +387,7 @@ top
 htop
 ~~~
 
-`htop` is a incremented version of `top` and is easier to used overall.
+`htop` is a incremented version of `top` and is easier to used.
 
 
 # Author
