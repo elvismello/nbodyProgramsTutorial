@@ -212,7 +212,7 @@ The current most used (for our group) n-body simulations program. It's quite rob
 
 ## Gadget 4
 
-A newer Gadget version. It has various improvements over Gadget 2 and 3, including some optimizations, better accuracy and scallability.
+A newer Gadget version. It has several improvements over Gadget 2 and 3, including some optimizations, better accuracy and scallability.
 
 It nativelly includes simpler, but ok, methods of star formation and cooling.
 
@@ -298,7 +298,7 @@ Then the keys are copied and installed onto the server
 ssh-copy-id -i <path>/<key_pair_name> <user>@<host>
 ~~~
 
-Now, depending on server settings and key settings, there shouldn't be the need to repeatedly type the password.
+Now, depending on server and key settings, there shouldn't be the need to repeatedly type the password.
 
 
 
@@ -332,7 +332,7 @@ If the user is the same at the server and the computer issuing commands, `<user>
 
 ## rsync
 
-This command can recursively sincronize a set of files, usually being faster than `scp` to copy a large quantity of them.
+This command can recursively sincronize a set of files, usually being faster than `scp` to copy large quantities of them.
 
 It can be used in a similar manner to `scp`
 
@@ -342,7 +342,7 @@ rsync -avP <origin> <destination>
 
 ~~~
 
-where the options `-avP` would use the archive mode (`-a`) with a verbose output (`-v`) and a progress bar (`-P`).
+where the options `-avP` would use the archive mode (`-a`) with verbose output (`-v`) and a progress bar (`-P`).
 
 
 
@@ -379,7 +379,7 @@ Navigation is simply done with the page up/down, mouse wheel (on certain termina
 
 ## top and htop
 
-Shows all tasks running in the system at the moment, per thread utilization and other useful information. Simply used by issuing
+Shows all tasks running in the system at the moment, per thread usage and other useful information. Simply used by issuing
 
 ~~~
 top
@@ -387,7 +387,7 @@ top
 htop
 ~~~
 
-`htop` is a incremented version of `top` and is easier to used.
+`htop` is a incremented version of `top` and is easier to use.
 
 
 # Author
@@ -396,4 +396,4 @@ Elvis de Mello
 
 Github: https://github.com/elvismello
 
-e-mail: elvis.mello@outlook.com / elvis.mello@ufpr.br
+e-mail: `elvis.mello@outlook.com` / `elvis.mello@ufpr.br`
